@@ -1,5 +1,8 @@
 class Customer < ActiveRecord::Base
+  belongs_to :party
+  has_many :order
+  has_many :food, :through => :order
 
-  # table relationships here
-  # validations here
+  # validates :name, presence: true
+
 end
