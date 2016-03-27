@@ -3,10 +3,18 @@ Rails.application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  # root 'welcome#index'
+  root to: 'users#new'
+  resources :users, only: [:new, :create, :show, :destroy]
+  resources :parties
+  resources :customers 
+  resources :orders
+  resources :foods
 
-  # Example of regular route:
-  #   get 'products/:id' => 'catalog#view'
+  # Regular Routes
+  get 'sessions/new' => 'sessions#new'
+  post 'sessions' => 'sessions#create'
+  delete 'sessions' => 'sessions#destroy'
+
 
   # Example of named route that can be invoked with purchase_url(id: product.id)
   #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase

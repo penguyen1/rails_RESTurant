@@ -3,7 +3,7 @@ class CreateOrders < ActiveRecord::Migration
     create_table :orders do |t|
       t.belongs_to :customer, index: true
       t.belongs_to :food, index: true
-      t.integer :quantity
+      t.integer :quantity, null: false, default: 1
     end
   end
 end

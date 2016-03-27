@@ -1,15 +1,23 @@
 class Party < ActiveRecord::Base
   belongs_to :user
-  has_many :customer
+  has_many :customers, dependent: :destroy
 
-  # validates 
+  validates :tableNum, :user_id, presence: true
 
-  # def after_initialize
-  #   if new_record?
-  #     guests||= 0
-  #     paid  ||= false
-  #     total || = 0.0
-  #   end
-  # end
+  def add_guest
+    # add customer_id to table_id
+  end
+
+  def remove_guest
+    # remove customer_id from table_id
+  end
+
+  def check
+    # change paid to True
+  end
+
+  def total
+    # calculate total price of all customers' totals with this tableNum
+  end
 
 end

@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+  before_action :authenticate, except: [:new, :create]
   # new user sign up form
   def new 
     @user = User.new
