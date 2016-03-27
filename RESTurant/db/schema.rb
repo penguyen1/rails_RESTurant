@@ -18,7 +18,7 @@ ActiveRecord::Schema.define(version: 20160327195045) do
 
   create_table "customers", force: :cascade do |t|
     t.string  "name"
-    t.decimal "total"
+    t.decimal "total",    default: 0.0, null: false
     t.integer "party_id"
   end
 
@@ -33,7 +33,7 @@ ActiveRecord::Schema.define(version: 20160327195045) do
   create_table "orders", force: :cascade do |t|
     t.integer "customer_id"
     t.integer "food_id"
-    t.integer "quantity",    default: 1
+    t.integer "quantity",    default: 1, null: false
   end
 
   add_index "orders", ["customer_id"], name: "index_orders_on_customer_id", using: :btree
