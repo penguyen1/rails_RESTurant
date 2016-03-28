@@ -19,11 +19,11 @@ class PartiesController < ApplicationController
 
   # creates new Party if it doesnt already exist
   def create
-    @party = Party.new(party_params)
+    @party = Party.new(params)
     if @party.save
       redirect_to party_path(@party)
     else
-      redirect_to new_party_path
+      redirect_to parties_path
     end
   end
 

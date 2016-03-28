@@ -1,8 +1,14 @@
+<!--  -->
+<button>
+  <%= link_to "Add Party", parties_path, method: :post %>
+</button>
+<button>Go Back to..?</button>
+
 <table>
   <tr>
     <th>Table #</th>
-    <th>Bill Total</th>
     <th>Paid?</th>
+    <th>Bill Total</th>
     <th></th>   <!-- View -->
     <th></th>   <!-- Delete -->
   </tr>
@@ -10,8 +16,8 @@
   <%= @parties.each do |party| %>
     <tr>
       <td><%= party.id %></td>
-      <td><%= party.total %></td>
       <td><%= party.paid %></td>
+      <td><%= party.total %></td>
       <td><%= link_to 'View', party_path(party) %></td>
       <td><%= link_to 'Delete', party_path(party),
               method: :delete, 

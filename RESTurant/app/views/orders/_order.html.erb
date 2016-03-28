@@ -1,0 +1,9 @@
+<div class="single-order">
+  <h2><strong>Customer ID: <%= order.customer_id %></strong></h2>
+  <h2><strong>Food ID: <%= order.food_id %></strong></h2>
+  <h4><strong>Quantity Ordered: <%= order.quantity %></strong></h4>
+  <h5><strong>Total Cost: $</strong><%= order.total %> </h5>
+
+  <%= link_to 'Edit', edit_order_path(@order) %>    <!-- Edit order form -->
+  <%= link_to 'Go Back', orders_path %>             <!-- List of all orders -->
+</div>

@@ -1,0 +1,8 @@
+<!-- EDIT:  <%= form_for :order, url: order_path(@order), method: :patch do |f| %> -->
+<%= form_for @order do |f| %>
+
+  <% food_array = Food.all.map{ |food| [food.name, food.id] } %>
+  <%= options_for_select(food_array) %>
+
+  <%= f.submit %><br>
+<% end %>

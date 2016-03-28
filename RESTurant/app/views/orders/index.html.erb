@@ -1,1 +1,41 @@
-index.html.erb
+<button>
+  <%= link_to "Add Order", new_order_path %>
+</button>
+<button>Go Back to..?</button>
+
+<table>
+  <tr>
+    <th>Customer_id</th>
+    <th>Food_id</th>
+    <th>Quantity</th>
+    <th>Total Cost</th>
+    <th></th>
+    <th></th>
+  </tr>
+
+  <% @orders.each do |order|%>
+    <tr>
+      <td><%= order.customer_id %></td>
+      <td><%= order.food_id %></td>
+      <td><%= order.quantity %></td>
+      <td><%= order.total %></td>
+      <td><%= link_to 'Edit', edit_order_path(order) %></td>
+      <td><%= link_to 'Delete', order_path(order),
+              method: :delete, 
+              data {confirm: 'Are you sure you want to delete this order?'} %></td>
+    </tr>
+  <% end %>
+</table>
+
+
+<!-- 
+<div class="order">
+  <h2><strong>Customer ID: <%= order.customer_id %></strong></h2>
+  <h5><strong>Food ID: <%= order.food_id %></strong></h5>
+  <h5><strong>Bill Amount: $<%= order.total %></strong></h5>
+
+  <%= link_to 'Edit', edit_order_path(order) %>
+  <%= link_to 'Delete', order_path(order),
+              method: :delete, 
+              data {confirm: 'Are you sure you want to delete this order?'} %>
+</div> -->
