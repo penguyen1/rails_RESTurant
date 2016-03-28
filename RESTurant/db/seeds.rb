@@ -10,7 +10,8 @@ Customer.destroy_all
 Order.destroy_all
 Party.destroy_all
 
-Party.create(guests: 3, paid: false, total: 0.0, user_id: 1)
+Party.create(user_id: 1)
+Party.create(user_id: 1)
 
 food_data = [
   { name: "Pho",
@@ -36,6 +37,18 @@ food_data = [
     price: 2.25,
     allergins: "Bacon",
     description: "So simple yet so freaking delicious"
+  }, 
+  { name: "Babaganoush",
+    cuisine: "Turkish",
+    price: 5.00,
+    allergins: "Dairy",
+    description: "A light, flavorful and smokey eggplant dip"
+  }, 
+  { name: "Chicken Parmesan",
+    cuisine: "Italian",
+    price: 8.25,
+    allergins: "Dairy",
+    description: "Chicken, Cheese, Tomato Sawce and Bread... Yumm"
   }
 ]
 
@@ -50,19 +63,13 @@ food_data.each do |food|
 end
 
 customer_data = [
-  {
-    name: "Peter",
-    total: 0,
+  { name: "Peter",
     party_id: 1
   },
-  {
-    name: "Momo",
-    total: 0,
+  { name: "Momo",
     party_id: 1
   },
-  {
-    name: "Tree",
-    total: 0,
+  { name: "Tree",
     party_id: 1
   }
 ]
@@ -70,7 +77,6 @@ customer_data = [
 customer_data.each do |cust|
   Customer.create!({
     name: cust[:name],
-    total: cust[:total],
     party_id: cust[:party_id]
   })
 end

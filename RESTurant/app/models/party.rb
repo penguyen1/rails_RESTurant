@@ -2,7 +2,7 @@ class Party < ActiveRecord::Base
   belongs_to :user
   has_many :customers, dependent: :destroy
 
-  validates :tableNum, :user_id, presence: true
+  validates :user_id, presence: true
 
   def add_guest
     # add customer_id to table_id

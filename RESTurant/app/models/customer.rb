@@ -1,18 +1,13 @@
 class Customer < ActiveRecord::Base
   belongs_to :party
   has_many :orders, dependent: :destroy
-  has_many :foods, :through => :orders
+  # has_many :foods, :through => :orders    # NECESSARY??
 
-  validates :name, :party_id, presence: true
+  validates :name, presence: true
 
   def add_customer
     # add new customer to table
   end
-
-  # why remove customer? only remove from party
-  # def remove_customer
-  #   # remove customer from table
-  # end
 
   def add_order
     # adds food + customer_id to orders 

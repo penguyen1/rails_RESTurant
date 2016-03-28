@@ -1,6 +1,6 @@
 class Food < ActiveRecord::Base
   has_many :orders
-  has_many :customers, :through => :orders
+  # has_many :customers, :through => :orders      # NECESSARY ??
 
   validates :name, presence: true, uniqueness: true
   validates :cuisine, presence: { message: "Where did this dish originate from?" }
@@ -16,7 +16,4 @@ class Food < ActiveRecord::Base
     # edit food_id info in Food table
   end
 
-  # why remove food from Food table? Only remove from Orders
-  # def remove_food
-  # end
 end
