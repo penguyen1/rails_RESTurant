@@ -1,14 +1,27 @@
 <div id="user-page">
-  <h1>Whattup, <%= @user.username %>!</h1><br>
-  <%=button_to 'DELETE Account', @user, :method => :delete %><br>
+  <h1>Whattup, <%= @user.username %>!</h1>
+  <%= link_to 'Create New Party', new_party_path %>
 
   <!-- Display list of parties -->
-  <!-- partial for parties/all?? -->
-   <%= render @user %> 
-
-
-
-  <%= link_to 'Create New Party', new_party_path %>
+  <br><br>
+  <div id="parties">
+    <table>
+      <tr>
+        <th>Table #</th>
+        <th>Paid?</th>
+        <th>Bill Total</th>
+        <th></th>   <!-- View -->
+        <th></th>   <!-- Delete -->
+      </tr>
+      <%= render @parties %> 
+    </table>
+  </div>
+  
+  
+  <br><br><br>
+  <button>    <!-- make this red -->
+    <%=button_to 'DELETE Account', @user, :method => :delete %>
+  </button>
 </div>
 
 

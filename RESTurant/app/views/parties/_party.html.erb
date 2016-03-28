@@ -1,12 +1,9 @@
-<div class="single-party">
-  <h1><strong>Party Table #</strong><%= party.id %> </h1>
-  <h3><strong>Paid? </strong><%= party.paid %> </h3>
-  <h3><strong>Total Bill </strong>$<%= party.total %> </h3>
-  
-  <div> 
-    <p><strong>Party Guests:</strong></p> 
-    <%= render partial: 'customers/index' %>
-    <!-- <%= render @party.customers %> -->
-  </div>
-  <%= link_to 'Go Back', partys_path %>            <!-- List of all partys -->
-</div>
+<tr>
+  <td><%= party.id %></td>
+  <td><%= party.paid %></td>
+  <td>$<%= party.total.to_s %></td>
+  <td><%= link_to 'View', party_path(party) %></td>
+  <td><%= link_to 'Delete', party_path(party),
+          method: :delete, 
+          data: {confirm: 'You sure about that, big guy?'} %></td>
+</tr>

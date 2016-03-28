@@ -6,7 +6,12 @@ class UsersController < ApplicationController
   end
 
   def show
-    @user = User.find(params[:id])            # GET /users/:id
+    if (@user = User.find(params[:id]))            # GET /users/:id
+      @parties = @user.parties.all
+    render plain: @parties.inspect
+    else
+      render file: 'public/404', status: 404, formats: [html]
+    end
   end
 
   def create
