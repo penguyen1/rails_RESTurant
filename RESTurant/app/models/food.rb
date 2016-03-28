@@ -8,12 +8,4 @@ class Food < ActiveRecord::Base
   validates :allergins, presence: { message: "Are you sure? We dont want anyone getting sick!" }
   validates :description, presence: { message: "Cmon, what's in it? Or at least give us a fun fact about this dish!" }
 
-  def add_food
-    # add food to Food table
-  end
-
-  def edit_food(id)
-    # edit food_id info in Food table
-  end
-
 end

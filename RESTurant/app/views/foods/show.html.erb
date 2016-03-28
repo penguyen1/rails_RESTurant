@@ -1,1 +1,10 @@
-show.html.erb
+<div class="single-food">
+  <h1> <%= food.name %> <div>$<%= food.price %></div></h1>
+  <h3> Cuisine: <%= food.cuisine %> </h3>
+  <div> 
+    <p><%= food.allergins %></p> 
+    <p><%= food.description %></p>
+  </div>
+  <%= link_to 'Edit', edit_food_path(@food) %>    <!-- Edit food form -->
+  <%= link_to 'Go Back', foods_path %>            <!-- List of all foods -->
+</div>

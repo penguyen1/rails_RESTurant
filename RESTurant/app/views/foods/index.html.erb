@@ -1,1 +1,40 @@
-index.html.erb
+<button>
+  <%= link_to "Add New Food", new_food_path %>
+</button>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Cuisine</th>
+    <th>Price</th>
+    <th>Allergins</th>
+    <th>Description</th>
+    <th></th>
+    <th></th>
+  </tr>
+
+  <% @foods.each do |food|%>
+    <tr>
+      <td><%= food.name %></td>
+      <td><%= food.cuisine %></td>
+      <td><%= food.price %></td>
+      <td><%= food.allergins %></td>
+      <td><%= food.description %></td>
+      <td><%= link_to 'View', food_path(food) %></td>
+      <td><%= link_to 'Edit', edit_food_path(food) %></td>
+    </tr>
+  <%end%>
+</table>
+
+<!--   <div class="food">
+    <div class="food_info">
+      <%= food.name %>
+      <span class="price"> $<%= food.price%> </span>
+      <%= food.cuisine %>
+      <%= food.allergins %>
+    </div>
+    <div class="description">
+      <%= food.description %>
+    </div>
+    <%= link_to 'Edit', edit_food_path %>
+  </div> -->

@@ -1,1 +1,19 @@
-_form.html.erb
+<!-- EDIT:  <%= form_for :food, url: food_path(@food), method: :patch do |f| %> -->
+<%= form_for @food do |f| %>
+  <%= f.label :name %><br>
+  <%= f.text_field :name %><br><br>
+
+  <%= f.label :cuisine %><br>
+  <%= f.text_field :cuisine %><br><br>
+
+  <%= f.label :price %><br>
+  <%= f.number_field :price %><br><br>
+
+  <%= f.label :allergins %><br>
+  <%= f.text_field :allergins %><br><br>
+
+  <%= f.label :description %><br>
+  <%= f.text_field :description %><br><br>
+
+  <%= f.submit %><br>
+<% end %>
