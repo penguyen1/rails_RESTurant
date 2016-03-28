@@ -1,0 +1,10 @@
+<div class="single-food">
+  <h1> <%= food.name %> <div>$<%= food.price %></div></h1>
+  <h3><strong>Cuisine: </strong><%= food.cuisine %> </h3>
+  <div> 
+    <p><strong>Allergins: </strong><%= food.allergins %></p> 
+    <p><strong>Description: </strong><%= food.description %></p>
+  </div>
+  <%= link_to 'Edit', edit_food_path(@food) %>    <!-- Edit food form -->
+  <%= link_to 'Go Back', foods_path %>            <!-- List of all foods -->
+</div>

@@ -1,1 +1,8 @@
-_form.html.erb
+<!-- EDIT:  <%= form_for :customer, url: customer_path(@customer), method: :patch do |f| %> -->
+<%= form_for @customer do |f| %>
+  <%= f.label :name %><br>
+  <%= f.text_field :name %><br><br>
+
+  <!-- <%= link_to Add Order, new_order_path %> CAN I PUT THIS HERE??? -->
+  <%= f.submit %><br>
+<% end %>

@@ -1,1 +1,38 @@
-index.html.erb
+<button>
+  <%= link_to "Add Customer", new_customer_path %>
+</button>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Table #</th>
+    <th>Bill Amount</th>
+    <th></th>
+    <th></th>
+  </tr>
+
+  <% @customers.each do |customer|%>
+    <tr>
+      <td><%= customer.name %></td>
+      <td><%= customer.party_id %></td>
+      <td><%= customer.total %></td>
+      <td><%= link_to 'View', customer_path(customer) %></td>
+      <td><%= link_to 'Edit', edit_customer_path(customer) %></td>
+    </tr>
+  <%end%>
+</table>
+
+
+<!-- 
+<div class="customer">
+  <h2><strong><%= customer.name %></strong></h2>
+  <h5><strong>Table #<%= customer.party_id %></strong></h5>
+  <h5><strong>Bill Amount: $<%= customer.total %></strong></h5>
+  
+  <div class="customer-orders">
+    Display all customer's orders from this tableNum(party_id)
+  </div>
+
+  <%= link_to 'View', customer_path(customer) %>
+  <%= link_to 'Edit', edit_customer_path(customer) %>
+</div> -->
