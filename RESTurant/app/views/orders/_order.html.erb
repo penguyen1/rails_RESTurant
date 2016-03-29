@@ -1,6 +1,7 @@
 <!-- Shows each food and order in a table row -->
 <tr>
-  <td><%= @food %></td>
+  <td><%= @foods[order[:id]-1].name %></td>
+  <td>$<%= @foods[order[:id]-1].price %></td>
   <td><%= order.quantity %></td>
   <td>$<%= order.total %></td>
   <!-- Edit order quantity?? -->
@@ -10,3 +11,5 @@
 </tr>
 
 
+<!-- How to update & display order total cost? (quantity*price) -->
+<!-- How to update & display customer total cost? (sum of all order totals) -->

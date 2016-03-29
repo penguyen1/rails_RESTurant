@@ -7,7 +7,6 @@ class OrdersController < ApplicationController
   
   def show
     @order = Order.find(params[:id])
-    render plain: @order.inspect
   end
 
   def new

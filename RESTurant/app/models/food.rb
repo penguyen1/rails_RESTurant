@@ -1,6 +1,6 @@
 class Food < ActiveRecord::Base
   has_many :orders
-  # has_many :customers, :through => :orders      # NECESSARY ??
+  has_many :customers, :through => :orders      # NECESSARY ??
 
   validates :name, presence: true, uniqueness: true
   validates :cuisine, presence: { message: "Where did this dish originate from?" }

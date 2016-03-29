@@ -1,2 +1,23 @@
-<!-- does this render each order correctly?? -->
-<%= render partial: 'order' %>
+<!-- Shows Order Profile - Food Info -->
+<div class="order">
+  <h1><strong><%= @order.name %></strong></h1>
+  <h4><strong>Bill Total: $<%= @order.total %></strong></h4><br>
+      
+  <%= link_to 'Go Back', party_path %>
+
+  <div><br>
+    <table>
+      <tr colspan="4"><strong>Order Bill</strong></tr>
+      <tr>
+        <th>Name</th>
+        <th>Jbdajsbfjas</th>
+        <th>Quantity</th>
+        <th>Total</th>
+        <th></th>
+      </tr>
+      <%= render @orders %>
+      <%= render @foods %>
+    </table>
+  </div>
+
+</div>

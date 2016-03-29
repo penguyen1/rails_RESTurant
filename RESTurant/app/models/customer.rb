@@ -1,7 +1,7 @@
 class Customer < ActiveRecord::Base
   belongs_to :party
   has_many :orders, dependent: :destroy
-  # has_many :foods, :through => :orders    # NECESSARY??
+  has_many :foods, :through => :orders    # NECESSARY??
 
   validates :name, presence: true
   # after_create :update_total        # used to update customer total after adding/removing food orders

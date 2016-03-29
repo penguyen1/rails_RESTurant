@@ -20,7 +20,7 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save
       session[:current_user_id] = @user.id 
-      redirect_to user_path(@user)            # GET /users/:id
+      # redirect_to user_path(@user)            # GET /users/:id
     else
       redirect_to new_user_path(@user)        # GET /users/new for @user obj
     end
