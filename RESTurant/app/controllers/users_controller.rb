@@ -1,8 +1,12 @@
 class UsersController < ApplicationController
-  before_action :authenticate, except: [:new, :create]
+  before_action :authenticate, except: [:new, :login, :create]
   # new user sign up form
   def new 
     @user = User.new
+  end
+
+  def login
+    render file: 'users/login'
   end
 
   def show
