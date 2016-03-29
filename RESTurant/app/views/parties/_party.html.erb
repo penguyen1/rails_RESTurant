@@ -1,9 +1,11 @@
 <tr>
-  <td><%= party.id %></td>
+  <td>#<%= party.id %></td>
   <td><%= party.paid %></td>
-  <td>$<%= party.total.to_s %></td>
+  <td>$<%= party.total %></td>
   <td><%= link_to 'View', party_path(party) %></td>
   <td><%= link_to 'Delete', party_path(party),
           method: :delete, 
           data: {confirm: 'You sure about that, big guy?'} %></td>
 </tr>
+
+<!-- Why is party.total nil?? -->

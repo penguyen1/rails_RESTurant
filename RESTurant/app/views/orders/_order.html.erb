@@ -4,6 +4,6 @@
   <h4><strong>Quantity Ordered: <%= order.quantity %></strong></h4>
   <h5><strong>Total Cost: $</strong><%= order.total %> </h5>
 
-  <%= link_to 'Edit', edit_order_path(@order) %>    <!-- Edit order form -->
+  <%= link_to 'Edit', edit_order_path(order) %>    <!-- Edit order form -->
   <%= link_to 'Go Back', orders_path %>             <!-- List of all orders -->
 </div>

@@ -1,0 +1,27 @@
+<!-- When does this view show? -->
+<!-- Shows Party Profile -->
+
+<div class="party">
+  <h1><strong>Table #<%= @party.id %></strong></h1>
+  <h4><strong>Bill Total: $<%= @party.total %></strong><br>
+      <strong>Paid Status: <%= @party.paid %></strong></h4>
+  <%= link_to 'Add Guest', new_customer_path %>
+
+  <div><br>
+    <table>
+      <tr colspan="4"><strong>Party Guests</strong></tr>
+      <tr>
+        <th>Name</th>
+        <th>Bill Amount</th>
+        <th></th>
+        <th></th>
+      </tr>
+      <%= render @customers %>
+    </table>
+  </div>
+
+</div>
+
+
+
+<!-- WHy is @party.total nil?? -->

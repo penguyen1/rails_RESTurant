@@ -1,10 +1,9 @@
-<div class="single-customer">
-  <h1><strong><%= customer.name %></strong></h1>
-  <h3><strong>Bill: </strong>$<%= customer.total %></h3>
-
-  <div> 
-    <p>Show list of all customer's orders each with an Edit and Delete button</p> 
-  </div>
-  <%= link_to 'Edit', edit_customer_path(@customer) %>    <!-- Edit customer form -->
-  <%= link_to 'Go Back', customers_path %>                <!-- List of all customers -->
-</div>
+<!-- Shows each customer in a table row -->
+<tr>
+  <td><%= customer.name %></td>
+  <td>$<%= customer.total %></td>
+  <td><%= link_to 'View', customer_path(customer) %></td>
+  <td><%= link_to 'Delete', customer_path(customer),
+          method: :delete, 
+          data: {confirm: 'You sure about that, big guy?'} %></td>
+</tr>

@@ -42,7 +42,7 @@ ActiveRecord::Schema.define(version: 20160327195045) do
 
   create_table "parties", force: :cascade do |t|
     t.boolean "paid",    default: false
-    t.decimal "total",   default: 0.0
+    t.decimal "total",   default: 0.0,   null: false
     t.integer "user_id"
   end
 

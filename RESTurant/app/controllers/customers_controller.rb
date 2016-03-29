@@ -7,6 +7,8 @@ class CustomersController < ApplicationController
   
   def show
     @customer = Customer.find(params[:id])
+    @orders = @customer.orders.all            # selects all orders with this @customer_id
+    # render plain: @orders.inspect
   end
 
   def new

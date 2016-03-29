@@ -8,7 +8,7 @@ class UsersController < ApplicationController
   def show
     if (@user = User.find(params[:id]))            # GET /users/:id
       @parties = @user.parties.all
-    render plain: @parties.inspect
+# render plain: @parties.inspect
     else
       render file: 'public/404', status: 404, formats: [html]
     end

@@ -1,5 +1,5 @@
 <div id="user-page">
-  <h1>Whattup, <%= @user.username %>!</h1>
+  <h1>Welcome back, <%= @user.username %>!</h1>
   <%= link_to 'Create New Party', new_party_path %>
 
   <!-- Display list of parties -->
@@ -7,8 +7,8 @@
   <div id="parties">
     <table>
       <tr>
-        <th>Table #</th>
-        <th>Paid?</th>
+        <th>Table Num</th>
+        <th>Did they pay yet?</th>
         <th>Bill Total</th>
         <th></th>   <!-- View -->
         <th></th>   <!-- Delete -->

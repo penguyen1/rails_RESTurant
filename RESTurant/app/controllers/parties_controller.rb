@@ -10,6 +10,7 @@ class PartiesController < ApplicationController
   def show
     @party = Party.find(params[:id])
     @customers = Customer.all
+    # render plain: @customers.inspect
   end
 
   # create a new Party
